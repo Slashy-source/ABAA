@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jet Ski | VELORA MARINE</title>
+    <meta name="description" content="Découvrez l'activité Jet Ski de VELORA MARINE.">
+
+    <!-- Styles existants du site -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Icônes et Bootstrap -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+
+    <!-- Styles spécifiques à la page Jet Ski -->
+    <style>
+        /* Tout est limité à cette page pour préserver le reste du site */
+
+        .jet-page {
+            max-width: 1250px;
+            padding-top: 28px;
+            padding-bottom: 70px;
+            color: #fff;
+        }
+
+        .jet-page * {
+            box-sizing: border-box;
+        }
+
+        .jet-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #b9e9f0;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 28px;
+            transition: color .25s, transform .25s;
+        }
+
+        .jet-back:hover {
+            color: #35e0dc;
+            text-decoration: none;
+            transform: translateX(-4px);
+        }
+
+        .jet-hero {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            align-items: center;
+            gap: 42px;
+        }
+
+        .jet-visual {
+            min-width: 0;
+            position: relative;
+            min-height: 430px;
+            overflow: hidden;
+            border-radius: 25px;
+            background: #092638;
+            border: 1px solid rgba(96, 226, 232, .24);
+            box-shadow: 0 22px 60px rgba(0, 0, 0, .28);
+        }
+
+        .jet-visual::after {
+            content: "";
+            position: absolute;
+            inset: 45% 0 0;
+            background: linear-gradient(
+                to bottom,
+                transparent,
+                rgba(3, 19, 31, .7)
+            );
+            pointer-events: none;
+        }
+
+        .jet-visual img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 430px;
+            object-fit: cover;
+            transition: transform .65s ease;
+        }
+
+        .jet-visual:hover img {
+            transform: scale(1.045);
+        }
+
+        .jet-image-label {
+            position: absolute;
+            z-index: 1;
+            bottom: 22px;
+            left: 22px;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 10px 15px;
+            border: 1px solid rgba(255, 255, 255, .22);
+            border-radius: 50px;
+            background: rgba(5, 25, 39, .72);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .jet-image-label i {
+            color: #40e4dc;
+        }
+
+        .jet-content {
+            min-width: 0;
+            animation: jetEnter .65s ease both;
+        }
+
+        .jet-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: #48e2dc;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 17px;
+        }
+
+        .jet-eyebrow::before {
+            content: "";
+            width: 25px;
+            height: 2px;
+            background: #48e2dc;
+        }
+
+        .jet-title {
+            color: #fff;
+            font-size: clamp(40px, 5vw, 66px);
+            font-weight: 900;
+            line-height: .98;
+            letter-spacing: -2px;
+            margin: 0 0 20px;
+            text-transform: uppercase;
+        }
+
+        .jet-title span {
+            display: block;
+            color: #45ded8;
+        }
+
+        .jet-description {
+            color: rgba(235, 247, 252, .8);
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 24px;
+        }
+
+        .jet-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-bottom: 27px;
+        }
+
+        .jet-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255, 255, 255, .14);
+            border-radius: 8px;
+            padding: 9px 12px;
+            color: #e5f8fa;
+            background: rgba(255, 255, 255, .055);
+            font-size: 12px;
+        }
+
+        .jet-tag i {
+            color: #45ded8;
+        }
+
+        .jet-price-card {
+            border: 1px solid rgba(69, 222, 216, .25);
+            border-radius: 17px;
+            background: linear-gradient(
+                135deg,
+                rgba(16, 63, 79, .85),
+                rgba(7, 32, 49, .92)
+            );
+            padding: 22px;
+            margin-bottom: 23px;
+        }
+
+        .jet-price-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 8px;
+        }
+
+        .jet-price-label {
+            color: #c4e0e8;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .jet-demo-label {
+            font-size: 10px;
+            color: #62e9df;
+            border: 1px solid rgba(98, 233, 223, .35);
+            border-radius: 50px;
+            padding: 5px 8px;
+            white-space: nowrap;
+        }
+
+        .jet-price {
+            color: #fff;
+            font-size: 37px;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .jet-price small {
+            color: #b9d9e1;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .jet-price-note {
+            color: #a9c8d2;
+            font-size: 11px;
+            margin: 8px 0 0;
+        }
+
+        .jet-reserve {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            border: 0;
+            border-radius: 10px;
+            background: linear-gradient(100deg, #36d8d2, #68eee1);
+            color: #052535;
+            font-size: 14px;
+            font-weight: 900;
+            letter-spacing: .8px;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(49, 218, 211, .2);
+            transition: transform .25s, box-shadow .25s, filter .25s;
+        }
+
+        .jet-reserve:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 13px 30px rgba(49, 218, 211, .32);
+            filter: brightness(1.05);
+        }
+
+        .jet-reserve:focus {
+            outline: 2px solid #fff;
+            outline-offset: 3px;
+        }
+
+        .jet-section {
+            margin-top: 65px;
+        }
+
+        .jet-section-heading {
+            margin-bottom: 24px;
+        }
+
+        .jet-section-kicker {
+            color: #48e2dc;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 9px;
+        }
+
+        .jet-section-title {
+            color: #fff;
+            font-size: clamp(25px, 3vw, 35px);
+            font-weight: 800;
+            margin: 0;
+        }
+
+        .jet-features {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 17px;
+        }
+
+        .jet-feature {
+            padding: 24px 20px;
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 15px;
+            background: rgba(5, 31, 47, .55);
+            transition: transform .25s, border-color .25s,
+                        background .25s;
+        }
+
+        .jet-feature:hover {
+            transform: translateY(-5px);
+            border-color: rgba(69, 222, 216, .45);
+            background: rgba(12, 52, 69, .75);
+        }
+
+        .jet-feature-icon {
+            width: 43px;
+            height: 43px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: rgba(69, 222, 216, .12);
+            color: #45ded8;
+            font-size: 17px;
+            margin-bottom: 17px;
+        }
+
+        .jet-feature h3 {
+            color: #fff;
+            font-size: 15px;
+            font-weight: 800;
+            margin-bottom: 9px;
+        }
+
+        .jet-feature p {
+            color: rgba(229, 243, 247, .7);
+            font-size: 13px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .jet-notice {
+            margin-top: 28px;
+            padding: 15px 18px;
+            border-left: 3px solid #45ded8;
+            border-radius: 0 8px 8px 0;
+            background: rgba(255, 255, 255, .045);
+            color: rgba(229, 243, 247, .72);
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .jet-notice i {
+            color: #45ded8;
+            margin-right: 8px;
+        }
+
+        .jet-modal .modal-content {
+            color: #183545;
+            border: 0;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .jet-modal .modal-header {
+            border-bottom: 1px solid #e6eef1;
+        }
+
+        .jet-modal .modal-title {
+            font-weight: 800;
+        }
+
+        .jet-modal .modal-body {
+            line-height: 1.8;
+        }
+
+        .jet-modal .modal-footer {
+            border-top: 1px solid #e6eef1;
+        }
+
+        @keyframes jetEnter {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 850px) {
+            .jet-hero {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .jet-visual,
+            .jet-visual img {
+                min-height: 350px;
+            }
+
+            .jet-content {
+                max-width: 650px;
+            }
+
+            .jet-features {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .jet-title {
+                font-size: clamp(42px, 9vw, 62px);
+            }
+        }
+
+        @media (max-width: 520px) {
+            .jet-page {
+                padding-top: 20px;
+                padding-bottom: 45px;
+            }
+
+            .jet-visual,
+            .jet-visual img {
+                min-height: 270px;
+            }
+
+            .jet-visual {
+                border-radius: 17px;
+            }
+
+            .jet-title {
+                font-size: 43px;
+                letter-spacing: -1.5px;
+            }
+
+            .jet-price-card {
+                padding: 18px;
+            }
+
+            .jet-price {
+                font-size: 32px;
+            }
+
+            .jet-features {
+                grid-template-columns: 1fr;
+            }
+
+            .jet-section {
+                margin-top: 45px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .jet-page *,
+            .jet-page *::before,
+            .jet-page *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR : conservée dans l'esprit du site existant -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="index.html">
+        <img src="logo.png" alt="VELORA MARINE" height="55">
+        VELORA MARINE
+    </a>
+
+    <a class="nav-link text-white ml-auto" href="index.html">
+        <i class="fas fa-home"></i> Accueil
+    </a>
+</nav>
+
+<main class="container jet-page">
+
+    <a href="index.html" class="jet-back">
+        <i class="fas fa-arrow-left"></i>
+        Retour aux activités
+    </a>
+
+    <!-- HERO -->
+    <section class="jet-hero">
+
+        <div class="jet-visual">
+            <img src="Jet1c.png" alt="Jet Ski sur la mer">
+
+            <div class="jet-image-label">
+                <i class="fas fa-water"></i>
+                Sensations nautiques
+            </div>
+        </div>
+
+        <div class="jet-content">
+
+            <div class="jet-eyebrow">
+                VELORA EXPERIENCE
+            </div>
+
+            <h1 class="jet-title">
+                Jet Ski
+                <span>Full Speed.</span>
+            </h1>
+
+            <p class="jet-description">
+                Envie de vitesse et de liberté ? Découvrez notre présentation
+                Jet Ski et imaginez votre prochaine aventure sur l'eau.
+                Une expérience pensée pour les amateurs de sensations
+                et de paysages marins.
+            </p>
+
+            <div class="jet-tags">
+                <div class="jet-tag">
+                    <i class="fas fa-bolt"></i>
+                    Sensations
+                </div>
+                <div class="jet-tag">
+                    <i class="fas fa-water"></i>
+                    Plein air
+                </div>
+                <div class="jet-tag">
+                    <i class="fas fa-clock"></i>
+                    30 minutes
+                </div>
+            </div>
+
+            <div class="jet-price-card">
+                <div class="jet-price-top">
+                    <span class="jet-price-label">
+                        Tarif de démonstration
+                    </span>
+                    <span class="jet-demo-label">
+                        OFFRE FICTIVE
+                    </span>
+                </div>
+
+                <div class="jet-price">
+                    80 € <small>/ 30 min</small>
+                </div>
+
+                <p class="jet-price-note">
+                    Exemple de prix pour la maquette du site.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                class="jet-reserve"
+                data-toggle="modal"
+                data-target="#reservationModal">
+                Découvrir la réservation
+                <i class="fas fa-arrow-right"></i>
+            </button>
+
+        </div>
+    </section>
+
+    <!-- CARACTÉRISTIQUES -->
+    <section class="jet-section">
+
+        <div class="jet-section-heading">
+            <div class="jet-section-kicker">
+                L'expérience
+            </div>
+
+            <h2 class="jet-section-title">
+                Prépare-toi à prendre le large.
+            </h2>
+        </div>
+
+        <div class="jet-features">
+
+            <article class="jet-feature">
+                <div class="jet-feature-icon">
+                    <i class="fas fa-gauge-high"></i>
+                </div>
+                <h3>Sensations fortes</h3>
+                <p>
+                    Une activité nautique dynamique pour profiter
+                    de la mer et changer de rythme.
+                </p>
+            </article>
+
+            <article class="jet-feature">
+                <div class="jet-feature-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>Durée indicative</h3>
+                <p>
+                    Une formule de 30 minutes utilisée ici
+                    comme exemple pour la maquette.
+                </p>
+            </article>
+
+            <article class="jet-feature">
+                <div class="jet-feature-icon">
+                    <i class="fas fa-shield-halved"></i>
+                </div>
+                <h3>Sécurité avant tout</h3>
+                <p>
+                    Toute activité réelle doit respecter les règles
+                    de sécurité et les consignes de l'encadrement.
+                </p>
+            </article>
+
+        </div>
+
+        <div class="jet-notice">
+            <i class="fas fa-circle-info"></i>
+            <strong>Site de démonstration :</strong>
+            le tarif, la durée et le bouton de réservation sont fictifs.
+            Aucun créneau réel n'est proposé et aucune réservation
+            ni aucun paiement ne sera effectué.
+        </div>
+
+    </section>
+
+</main>
+
+<!-- MODALE DE RÉSERVATION FICTIVE -->
+<div
+    class="modal fade jet-modal"
+    id="reservationModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="reservationModalLabel"
+    aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="reservationModalLabel">
+                    <i class="fas fa-water"></i>
+                    Réservation Jet Ski
+                </h5>
+
+                <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Fermer">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <p>
+                    Tu es sur la maquette de réservation VELORA MARINE.
+                </p>
+                <p>
+                    Cette fonctionnalité est une démonstration :
+                    aucune réservation réelle ni aucun paiement
+                    ne sera effectué.
+                </p>
+            </div>
+
+            <div class="modal-footer">
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal">
+                    Fermer
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Scripts nécessaires à la modale Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

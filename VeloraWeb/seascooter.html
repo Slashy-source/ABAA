@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sea Scooter | VELORA MARINE</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="index.html">
+        <img src="logo.png" alt="VELORA MARINE" height="55">
+        VELORA MARINE
+    </a>
+    <a class="nav-link text-white ml-auto" href="index.html">
+        <i class="fas fa-home"></i> Accueil
+    </a>
+</nav>
+
+<main class="container activity-page">
+    <a href="index.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Retour aux activités
+    </a>
+
+    <section class="activity-detail">
+        <div class="activity-photo">
+            <img src="Seascott.png" alt="Sea Scooter">
+        </div>
+
+        <div class="activity-info">
+            <span class="activity-category">EXPLORATION &amp; GLISSE</span>
+            <h1>Sea Scooter</h1>
+
+            <p>
+                Découvrez une nouvelle manière de vous déplacer dans l'eau
+                grâce à un scooter sous-marin. Une activité nautique originale</p>
+
+            <div class="activity-price">
+                <span>Prix</span>
+                <strong>35 € / 30 min</strong>
+            </div>
+
+            <h2>Caractéristiques</h2>
+            <ul class="activity-specs">
+                <li><i class="fas fa-check"></i> Propulsion électrique dans l'eau</li>
+                <li><i class="fas fa-check"></i> Activité de découverte aquatique</li>
+                <li><i class="fas fa-check"></i> Durée indicative : 30 minutes</li>
+                <li><i class="fas fa-check"></i> Utilisation selon les consignes de sécurité</li>
+            </ul>
+
+            <button class="btn-reserve" data-toggle="modal" data-target="#reservationModal">
+                <i class="fas fa-calendar-check"></i> Réserver
+            </button>
+        </div>
+    </section>
+</main>
+
+<div class="modal fade" id="reservationModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Réservation</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Cette fonctionnalité est une maquette. Aucune réservation
+                réelle ni aucun paiement ne sera effectué.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    Fermer
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

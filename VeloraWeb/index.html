@@ -1,0 +1,336 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>VELORA MARINE</title>
+
+    <!-- CSS du site -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          crossorigin="anonymous">
+
+    <!-- Bootstrap : une seule fois -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
+        <div class="container">
+
+            <button class="navbar-toggler" type="button"
+                    data-toggle="collapse" data-target="#Navbar"
+                    aria-controls="Navbar" aria-expanded="false"
+                    aria-label="Ouvrir le menu">
+                <span class="fas fa-bars fa-lg"></span>
+            </button>
+
+            <a class="navbar-brand" href="./index.html">
+                <img src="logo.png" alt="Logo VELORA MARINE"
+                     height="50" width="60">
+            </a>
+
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./index.html">
+                            <span class="fa fa-home fa-lg"></span>
+                            Accueil
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./aboutus.html">
+                            <span class="fa fa-info fa-lg"></span>
+                            Informations
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">
+                            <span class="fa fa-address-card fa-lg"></span>
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+
+                <span class="navbar-text">
+                    <button type="button" class="btn btn-success"
+                            data-toggle="modal" data-target="#loginModal">
+                        <span class="fa fa-sign-in-alt"></span>
+                        Login
+                    </button>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="container">
+
+        <!-- CARROUSEL -->
+        <div class="row">
+            <div class="col">
+
+                <div id="mycarousel" class="carousel slide"
+                     data-ride="carousel">
+
+                    <div class="carousel-inner" role="listbox">
+
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid"
+                                 src="Slide1.png"
+                                 alt="Découverte de l'océan">
+
+                            <div class="carousel-caption d-none d-md-block">
+                                <h1>The Ocean</h1>
+                                <p>Discover the magic of the Ocean</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid"
+                                 src="Slide2.png"
+                                 alt="Bateaux premium sur la mer">
+
+                            <div class="carousel-caption d-none d-md-block">
+                                <h1>Luxury on the Ocean</h1>
+                                <p>Experience the sea in style with our premium boats</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid"
+                                 src="Slide3.png"
+                                 alt="Activités nautiques VELORA MARINE">
+                        </div>
+
+                    </div>
+
+                    <a class="carousel-control-prev"
+                       href="#mycarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon"
+                              aria-hidden="true"></span>
+                        <span class="sr-only">Précédent</span>
+                    </a>
+
+                    <a class="carousel-control-next"
+                       href="#mycarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon"
+                              aria-hidden="true"></span>
+                        <span class="sr-only">Suivant</span>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- CARTES DES ACTIVITÉS -->
+        <div class="row row-content">
+
+            <!-- JET SKI -->
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card mycard">
+                    <img class="card-img-top photo"
+                         src="Jet1c.png" alt="Jet ski">
+
+                    <div class="card-body bodycard">
+                        <h5 class="card-title">JET SKI</h5>
+                        <p class="card-text contentcard">
+                            Experience the thrill of the sea with our premium
+                            jet ski adventures, combining speed, freedom,
+                            and unforgettable sensations.
+                        </p>
+                    </div>
+
+                    <div class="card-body bodycard">
+                        <a href="./jetski.html" class="btn btn-success">
+                            <span class="fa fa-sign-in-alt"></span>
+                            En savoir plus
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PREMIUM BOAT -->
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card mycard">
+                    <img class="card-img-top photo"
+                         src="Boatloc1.png" alt="Bateau premium">
+
+                    <div class="card-body bodycard">
+                        <h5 class="card-title">Premium BOAT</h5>
+                        <p class="card-text contentcard">
+                            Discover the coastline in style aboard our premium
+                            boats, offering comfort, elegance, and exclusive
+                            experiences at sea.
+                        </p>
+                    </div>
+
+                    <div class="card-body bodycard">
+                        <a href="./bateau.html" class="btn btn-success">
+                            <span class="fa fa-sign-in-alt"></span>
+                            En savoir plus
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DIVING -->
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card mycard">
+                    <img class="card-img-top photo"
+                         src="diving.png" alt="Plongée sous-marine">
+
+                    <div class="card-body bodycard">
+                        <h5 class="card-title">DIVING</h5>
+                        <p class="card-text contentcard">
+                            Explore the wonders beneath the surface and discover
+                            a fascinating underwater world filled with beauty
+                            and adventure.
+                        </p>
+                    </div>
+
+                    <div class="card-body bodycard">
+                        <a href="./plongee.html" class="btn btn-success">
+                            <span class="fa fa-sign-in-alt"></span>
+                            En savoir plus
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEA SCOOTER -->
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card mycard">
+                    <img class="card-img-top photo"
+                         src="Seascott.png" alt="Sea scooter">
+
+                    <div class="card-body bodycard">
+                        <h5 class="card-title">SeaScotter</h5>
+                        <p class="card-text contentcard">
+                            Glide effortlessly through crystal-clear waters
+                            with our sea scooters and enjoy a unique way to
+                            explore the underwater world.
+                        </p>
+                    </div>
+
+                    <div class="card-body bodycard">
+                        <a href="./seascooter.html" class="btn btn-success">
+                            <span class="fa fa-sign-in-alt"></span>
+                            En savoir plus
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FLYBOARD -->
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card mycard">
+                    <img class="card-img-top photo"
+                         src="Flyboard1.png" alt="Flyboard">
+
+                    <div class="card-body bodycard">
+                        <h5 class="card-title">FlyingBoard</h5>
+                        <p class="card-text contentcard">
+                            Rise above the water and experience the ultimate
+                            adrenaline rush with our exciting flyboard
+                            adventures.
+                        </p>
+                    </div>
+
+                    <div class="card-body bodycard">
+                        <a href="./flyboard.html" class="btn btn-success">
+                            <span class="fa fa-sign-in-alt"></span>
+                            En savoir plus
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WATER RIDE -->
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card mycard">
+                    <img class="card-img-top photo"
+                         src="RideWater.png" alt="Water ride">
+
+                    <div class="card-body bodycard">
+                        <h5 class="card-title">WaterRide</h5>
+                        <p class="card-text contentcard">
+                            Experience the thrill of being towed across the
+                            waves with our exciting water rides, combining
+                            speed, fun, and unforgettable moments on the sea.
+                        </p>
+                    </div>
+
+                    <div class="card-body bodycard">
+                        <a href="./waterride.html" class="btn btn-success">
+                            <span class="fa fa-sign-in-alt"></span>
+                            En savoir plus
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CONTACT -->
+        <section id="contact" class="contact-section">
+            <h2>Contact</h2>
+            <p>VELORA MARINE — Découvrez nos activités nautiques.</p>
+        </section>
+
+    </main>
+
+    <!-- FENÊTRE LOGIN DE DÉMONSTRATION -->
+    <div class="modal fade" id="loginModal" tabindex="-1"
+         role="dialog" aria-labelledby="loginModalLabel"
+         aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content login-modal">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">
+                        Connexion
+                    </h5>
+
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-label="Fermer">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <p>
+                        Cette fenêtre est une démonstration.
+                        Aucun compte réel n'est connecté.
+                    </p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success"
+                            data-dismiss="modal">
+                        Fermer
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT : une seule fois, dans le bon ordre -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
